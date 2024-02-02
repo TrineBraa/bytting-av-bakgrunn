@@ -40,13 +40,15 @@
     <button onclick="changebackground()">Change background color</button><br />
     <br />
     <div id="">
-      <div id="greenDiv" onclick="setDivColor('greenDiv','green')">Green</div>
+      <div id="greenDiv" onclick="setDivColor('greenDiv','lightgreen')">
+        Green
+      </div>
       <br />
-      <div id="violetDiv" onclick="setDivColor('violetDiv', 'red')">
+      <div id="violetDiv" onclick="setDivColor('violetDiv', 'palevioletred')">
         Violet Red
       </div>
       <br />
-      <div id="lightblueDiv" onclick="setDivColor('lightblueDiv','blue')">
+      <div id="lightblueDiv" onclick="setDivColor('lightblueDiv','lightblue')">
         Light Blue
       </div>
       <br />
@@ -56,19 +58,19 @@
     <div
       class="border"
       id="changediv1"
-      onclick="changeDivColor(changediv1)"
+      onclick="changeDivColor('changediv1')"
     ></div>
     <br />
     <div
       class="border"
       id="changediv2"
-      onclick="changeDivColor(changediv2)"
+      onclick="changeDivColor('changediv2')"
     ></div>
     <br />
     <div
       class="border"
       id="changediv3"
-      onclick="changeDivColor(changediv3)"
+      onclick="changeDivColor('changediv3')"
     ></div>
 
     <script>
@@ -91,6 +93,10 @@
         document.getElementById("greenDiv").classList.remove("border");
         document.getElementById("violetDiv").classList.remove("border");
         document.getElementById("lightblueDiv").classList.remove("border");
+      }
+
+      function changebackground() {
+        document.getElementById("body").style.backgroundColor = SelectedColor;
       }
     </script>
   </body>
