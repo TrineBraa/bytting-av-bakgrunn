@@ -1,103 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bytting av bakgrunn</title>
-    <style>
-      .green {
-        width: 200px;
-        height: 30px;
-        background-color: lightgreen;
-      }
 
-      .red {
-        width: 40px;
-        height: 30px;
-        background-color: palevioletred;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bytting av bakgrunn</title>
+  <style>
+    .green {
+      width: 200px;
+      height: 30px;
+      background-color: lightgreen;
+    }
 
-      .blue {
-        width: 200px;
-        height: 30px;
-        background-color: lightblue;
-      }
+    .red {
+      width: 40px;
+      height: 30px;
+      background-color: palevioletred;
+    }
 
-      .border {
-        border: solid black 3px;
-        width: 200px;
-        height: 50px;
-        color: black;
-      }
-    </style>
-  </head>
+    .blue {
+      width: 200px;
+      height: 30px;
+      background-color: lightblue;
+    }
 
-  <body id="body">
-    <h1 style="font-family: Arial, Helvetica, sans-serif; color: blueviolet">
-      Bytting av bakgrunnsfarge!
-    </h1>
+    .border {
+      border: solid black 3px;
+      width: 200px;
+      height: 50px;
+      color: black;
+    }
+  </style>
+</head>
 
-    <button onclick="changebackground()">Change background color</button><br />
-    <br />
-    <div id="">
-      <div id="greenDiv" onclick="setDivColor('greenDiv','lightgreen')">
-        Green
-      </div>
-      <br />
-      <div id="violetDiv" onclick="setDivColor('violetDiv', 'palevioletred')">
-        Violet Red
-      </div>
-      <br />
-      <div id="lightblueDiv" onclick="setDivColor('lightblueDiv','lightblue')">
-        Light Blue
-      </div>
-      <br />
+<body id="body">
+  <h1 style="font-family: Arial, Helvetica, sans-serif; color: blueviolet">
+    Bytting av bakgrunnsfarge!
+  </h1>
+
+  <button onclick="changebackground()">Change background color</button><br />
+  <br />
+  <div id="">
+    <div id="greenDiv" onclick="setDivColor('greenDiv','lightgreen')">
+      Green
     </div>
-
-    <h3>Color the Div</h3>
-    <div
-      class="border"
-      id="changediv1"
-      onclick="changeDivColor('changediv1')"
-    ></div>
     <br />
-    <div
-      class="border"
-      id="changediv2"
-      onclick="changeDivColor('changediv2')"
-    ></div>
+    <div id="violetDiv" onclick="setDivColor('violetDiv', 'palevioletred')">
+      Violet Red
+    </div>
     <br />
-    <div
-      class="border"
-      id="changediv3"
-      onclick="changeDivColor('changediv3')"
-    ></div>
+    <div id="lightblueDiv" onclick="setDivColor('lightblueDiv','lightblue')">
+      Light Blue
+    </div>
+    <br />
+  </div>
 
-    <script>
-      let SelectedColor = "blue";
-      setDivColor("greenDiv", "blue");
+  <h3>Color the Div</h3>
+  <div class="border" id="changediv1" onclick="changeDivColor('changediv1')"></div>
+  <br />
+  <div class="border" id="changediv2" onclick="changeDivColor('changediv2')"></div>
+  <br />
+  <div class="border" id="changediv3" onclick="changeDivColor('changediv3')"></div>
 
-      function changeDivColor(id) {
-        document.getElementById(id).style.backgroundColor = SelectedColor;
-      }
+  <script>
+    let SelectedColor = "blue";
+    setDivColor("greenDiv", "lightgreen");
 
-      function setDivColor(id, color) {
-        removeborder();
-        document.getElementById(id).classList.add("border");
+    function changeDivColor(id) {
+      document.getElementById(id).style.backgroundColor = SelectedColor;
+    }
 
-        SelectedColor = color;
-        console.log(SelectedColor);
-      }
+    function setDivColor(id, color) {
+      removeborder();
+      document.getElementById(id).classList.add("border");
 
-      function removeborder() {
-        document.getElementById("greenDiv").classList.remove("border");
-        document.getElementById("violetDiv").classList.remove("border");
-        document.getElementById("lightblueDiv").classList.remove("border");
-      }
+      SelectedColor = color;
+      console.log(SelectedColor);
+    }
 
-      function changebackground() {
-        document.getElementById("body").style.backgroundColor = SelectedColor;
-      }
-    </script>
-  </body>
+    function removeborder() {
+      document.getElementById("greenDiv").classList.remove("border");
+      document.getElementById("violetDiv").classList.remove("border");
+      document.getElementById("lightblueDiv").classList.remove("border");
+    }
+
+    function changebackground() {
+      document.getElementById("body").style.backgroundColor = SelectedColor;
+    }
+  </script>
+</body>
+
 </html>
